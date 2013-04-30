@@ -1,0 +1,6 @@
+[submodule "html/slashquery/core/vendor/dalmp"]
+	path = html/slashquery/core/vendor/dalmp
+	url = git://github.com/nbari/DALMP.git
+[submodule "html/slashquery/core/vendor/swiftmailer"]
+	path = html/slashquery/core/vendor/swiftmailer
+	url = git://github.com/swiftmailer/swiftmailer.git
