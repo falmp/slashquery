@@ -1,0 +1,63 @@
+<?php
+/**
+ * DEFAULT - slashquery/sites/default/config.php
+ *
+ * configuration file for the default site
+ *
+ * @author Nicolas Embriz <nbari@slashquery.com>
+ * @package SlashQuery
+ * @license BSD, see LICENSE file
+ * @version 1.0
+ */
+
+/**
+ * DALMP settings
+ */
+define('DSN', 'utf8://sqdbuser:'.rawurlencode('pa$?word').'@127.0.0.1:3306/slashquery?memcache:127.0.0.1:11211:1');
+#define('DB_SSL', '{"key":null,"cert":null,"ca":"mySSL","capath":null,"cipher":null}');
+define('DALMP_MYSQLI_INIT_COMMAND', 'SET time_zone="+00:00"');
+define('DALMP_CONNECT_TIMEOUT', 10);
+define('DALMP_SESSIONS_CACHE_TYPE', 'memcache');
+define('DALMP_SESSIONS_MAXLIFETIME', 1800);
+define('DALMP_SESSIONS_REF', 'UID');
+define('DALMP_SESSIONS_KEY', $sqSite);
+define('DALMP_SESSIONS_SQLITE_DB', SQ_ROOT . "slashquery/sites/$sqSite/sessions.db");
+define('DALMP_SITE_KEY', $sqSite);
+define('DALMP_CACHE_DIR', SQ_ROOT . "../dalmpCache/$sqSite");
+define('DALMP_DEBUG_FILE', SQ_ROOT . "../logs/$sqSite/dalmp.log");
+
+/**
+ * SQ settigs
+ */
+define('SQ_TIME_ZONE', 'UTC'); // set site TIME_ZONE default to UTC if not specified.
+define('SQ_TEMPLATE_CACHE_TYPE', 'memcache:127.0.0.1:11211:1'); // values can be: memcache or redis
+define('SQ_TEMPLATE_NAME', 'default');
+
+/**
+ * mysql
+ */
+define('DB_MYSQLDUMP', '/usr/local/mysql/bin/mysqldump');
+define('DB_BACKUP_DIR', SQ_ROOT . "../dbBackup/$sqSite/");
+
+/**
+ * Mail settings
+ */
+define('SMTP_HOST', 'smtp host');
+define('SMTP_PORT', 587); // 25, 465, 587
+define('SMTP_SECURE', 'tls'); // Options are '', 'ssl' or 'tls'
+define('SMTP_AUTH', true);
+define('SMTP_USERNAME', 'username');
+define('SMTP_PASSWORD', 'password');
+
+/**
+ * Keys
+ */
+define('SITE_SALT', 's,y }DzBEl)J",:qB_qM};>?$D4YaNV6*s.>ei05o}Z7Bf)&~3SY~a[gFs+S{iE*');
+define('RECAPTCHA_PUBLIC_KEY','your public key see: http://www.google.com/recaptcha/captcha');
+define('RECAPTCHA_PRIVATE_KEY','your private key see: http://www.google.com/recaptcha/captcha');
+
+/**
+ * CDN domain
+ */
+define('CDN_ENABLED', false);
+define('CDN_VENDOR', 'yourdomain.cloudfront.net');

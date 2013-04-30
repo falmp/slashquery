@@ -1,0 +1,25 @@
+<?php if (!defined('SQ_ROOT')) exit('No direct script access allowed');
+/**
+ * site / domain configuration - /slashquery/sites.php
+ *
+ * @author Nicolas Embriz <nbari@slashquery.com>
+ * @package SlashQuery
+ * @license BSD, see LICENSE file
+ * @version 1.0
+ */
+
+/**
+ * $sqSites contains the sites that will be served.
+ * format is: domainname.tld => dir
+ * each dir must have his own configuration file "config.php"
+ * an '*' (wildcard) means that everything will be served from the
+ * assigned dir, (I like to use the domain.name as the dir name)
+ */
+
+# default
+$sqSites['*']                   = 'default';
+# slashquery.com
+$sqSites['slashquery.com']      = 'slashquery.com';
+$sqSites['*.slashquery.com']    = 'slashquery.com';
+# other.site.tld
+$sqSites['other.site.tld']      = 'other.site.tld';

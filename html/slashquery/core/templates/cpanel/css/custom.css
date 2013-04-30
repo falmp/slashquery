@@ -1,0 +1,117 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+body > .navbar {
+  font-size: 13px;
+}
+
+.centeredBlock {
+  text-align: center;
+ }
+.centeredBlock:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+ }
+.centeredBlockDiv {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  text-align: left;
+}
+
+.icon-openid {
+  background: transparent url('../img/openid13.png') no-repeat left center;
+}
+.icon-status1 {
+  background: transparent url('../img/status1.png') no-repeat left center;
+}
+.icon-status0 {
+  background: transparent url('../img/status0.png') no-repeat left center;
+}
+
+.center { text-align: center }
+.fl { float: left}
+.fr { float: right}
+
+.breadcrumb {
+  padding: 7px 14px;
+  margin: 0 0 18px;
+  background-color: #fbfbfb;
+  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f5f5f5));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: linear-gradient(top, #ffffff, #f5f5f5);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0);
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 #ffffff;
+  -moz-box-shadow: inset 0 1px 0 #ffffff;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+
+del {
+  color: #f86800;
+}
+
+del em {
+  color: #919191;
+}
+
+.box-header {
+  font-weight: bold;
+  border: 1px solid #9d9d9d;
+  padding: 7px 14px;
+  color: #333;
+  background: -webkit-gradient(linear,left bottom,left top, from(#cdcdcd), to(#ebebeb));
+  background: -moz-linear-gradient(center bottom, #cdcdcd, #ebebeb);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#cdcdcd');
+  -moz-border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
+  -khtml-border-radius: 3px 3px 0 0;
+  text-shadow: 1px 1px 1px #fff;
+}
+.box-header a {
+  color: #333;
+  text-decoration: none;
+}
+.box-header a:hover {
+  color: #1f92ff;
+}
+.box {
+  margin: 0;
+  padding: 1em;
+  background: rgba(255,255,255,0.3);
+  border: 1px solid #9d9d9d;
+  border-top: none;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  -khtml-border-radius: 0 0 3px 3px;
+  overflow: auto;
+}
+
+.perms {
+  border-collapse: separate;
+}
+
+form label.required:before {
+  color: #e32;
+  content: '*\a0';
+  display: inline
+}
+
+label.error {
+  font-weight: bold;
+  color: #e32;
+  padding: 2px 8px;
+  margin-top: 2px;
+}

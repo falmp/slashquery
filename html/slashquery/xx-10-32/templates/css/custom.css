@@ -1,0 +1,29 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+body > .navbar {
+  font-size: 13px;
+}
+
+.centeredBlock {
+  text-align: center;
+ }
+.centeredBlock:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+ }
+.centeredBlockDiv {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  text-align: left;
+}
+
+.center { text-align: center }
+.fl { float: left}
+.fr { float: right}

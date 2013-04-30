@@ -1,0 +1,10 @@
+		  <!-- end wrapper -->
+			<div class="push"></div>
+		</div>
+		<!-- footer -->
+		<div id="sqfooter" class="footer">
+			<a href="/" title="slashquery.com" class="icon sprite16 sqlogo left">powered by slashquery.com</a> <span class="right" id="showDateTime"><?php echo date('j'),'&middot;',date('n'),'&middot;',date('Y'),date(' G:i:s'); ?></span>
+		</div>
+
+	</body>
+</html>

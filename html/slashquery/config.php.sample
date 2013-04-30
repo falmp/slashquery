@@ -1,0 +1,63 @@
+<?php if (!defined('SQ_ROOT')) exit('No direct script access allowed');
+/**
+ * main configuration file - /slashquery/config.php
+ *
+ * @author Nicolas Embriz <nbari@slashquery.com>
+ * @package SlashQuery
+ * @license BSD, see LICENSE file
+ * @version 1.0
+ */
+
+/**
+ * sanitize $_SERVER
+ */
+$_SERVER['HTTP_HOST'] = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+$_SERVER['HTTP_ACCEPT_LANGUAGE'] = isset($_COOKIE['SQ_LANG']) ? $_COOKIE['SQ_LANG'] : (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr(str_replace('-','_',$_SERVER['HTTP_ACCEPT_LANGUAGE']),0,5) : 'en');
+
+/**
+ * iconv encoding
+ */
+iconv_set_encoding('internal_encoding', 'UTF-8');
+
+/**
+ * UTF-8 Support
+ * echo preg_match('/./u', 'ç'),PHP_EOL;
+ */
+mb_internal_encoding('UTF-8');
+
+/**
+ * DALMP path
+ */
+define('DALMP', SQ_ROOT . 'slashquery/core/vendor/dalmp/dalmp.php');
+
+/**
+ * Swift Mailer path
+ */
+define('SWIFT_MAILER', SQ_ROOT . 'slashquery/core/vendor/swiftmailer/lib/swift_required.php');
+
+/**
+ *  diaplay & log ERRORS
+ *  if no SQ_ENV var found  errors will not be displayed
+ */
+define('LOG_ERRORS', true);
+define('LOG_ERRORS_FILE', SQ_ROOT . '../logs/errors.log');
+define('DEBUG_FILE', SQ_ROOT . '../logs/debug.log');
+
+/**
+ * Report errors via email
+ */
+define('REPORT_ERRORS_VIA_EMAIL', false);
+define('REPORT_ERROR_MAIL_TO', 'your@email.tld');
+define('REPORT_ERROR_MAIL_FROM', 'your@email.tld');
+define('REPORT_ERROR_MAIL_FROMNAME', '[slashquery]');
+define('REPORT_ERROR_MAIL_SUBJECT', "ERROR - $_SERVER[HTTP_HOST] - ".gethostname());
+
+/**
+ * Mail settings
+ */
+define('SQ_SMTP_HOST', 'your smtp server');
+define('SQ_SMTP_PORT', 587); // 25, 465, 587
+define('SQ_SMTP_SECURE', 'tls'); // Options are '', 'ssl' or 'tls'
+define('SQ_SMTP_AUTH', true);
+define('SQ_SMTP_USERNAME', 'username');
+define('SQ_SMTP_PASSWORD', 'password');
