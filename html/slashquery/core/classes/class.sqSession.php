@@ -77,7 +77,7 @@ class sqSession {
    * @param boolean $clear
    * @return boolean
    */
-  public static function vaildToken($token, $name='token', $clear=true) {
+  public static function validToken($token, $name='token', $clear=true) {
     if (self::token($name) == $token) {
       if ($clear) {
         self::Remove($name);
