@@ -15,7 +15,7 @@ class sqAddUser extends sqFinalRule {
     /**
      * check for token, email, password and do not erase the token
      */
-    if (sqTools::postVars('t','e','p') && sqSession::vaildToken($_POST['t'], 'token', false)) {
+    if (sqTools::postVars('t','e','p') && sqSession::validToken($_POST['t'], 'token', false)) {
       $email    = sqAES::decrypt( sqSession::token(), $_POST['e'] );
       $password = sqAES::decrypt( sqSession::token(), $_POST['p'] );
       $roles = isset($_POST['roles']) ? $_POST['roles'] : array();

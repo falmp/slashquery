@@ -12,7 +12,7 @@ class sqCreateLocale extends sqFinalRule {
 
   protected function evaluate() {
 
-    if (sqTools::postVars('iso', 'language') && sqSession::vaildToken($_POST['token'], 'token', false)) {
+    if (sqTools::postVars('iso', 'language') && sqSession::validToken($_POST['token'], 'token', false)) {
       sqTools::jStatus( sqLocale::create($_POST['iso'], $_POST['language'], $this->DB()) );
     } else {
       sqTools::jStatus();

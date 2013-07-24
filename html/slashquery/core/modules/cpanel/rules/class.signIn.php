@@ -37,7 +37,7 @@ class sqSignIn extends sqFinalRule {
         /**
          * if not a valid token, increment the login counter and reload page
          */
-        if (!sqSession::vaildToken($_POST['t'], 'token', false)) {
+        if (!sqSession::validToken($_POST['t'], 'token', false)) {
           sqSession::Set('lerror', 1 + sqSession::Get('lerror'));
           sqTools::jStatus('r');
         }

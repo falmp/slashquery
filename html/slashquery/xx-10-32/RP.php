@@ -11,7 +11,7 @@
 /**
  * if postvars token and np, change the password
  */
-if (sqTools::postVars('token','np') && sqSession::vaildToken($_POST['token'], 'token', false)) {
+if (sqTools::postVars('token','np') && sqSession::validToken($_POST['token'], 'token', false)) {
   if ($user = $SQ->DB()->FetchMode('ASSOC')->PGetRow('SELECT uid, email FROM sq_users WHERE status=2 AND HEX(captcha) = ?', $captcha)) {
     $password = sqAES::decrypt(sqSession::token(), $_POST['np']);
     $password = sqTools::hasher(hash('sha256', $user['email'].$password));

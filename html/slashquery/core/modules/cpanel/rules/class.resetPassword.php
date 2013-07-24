@@ -15,7 +15,7 @@ class sqResetPassword extends sqFinalRule {
     /**
      * normal auth using email, password, token
      */
-    if (sqTools::postVars('email2','token') && sqSession::vaildToken($_POST['token'], 'token', false) && sqTools::validEmail($_POST['email2'])) {
+    if (sqTools::postVars('email2','token') && sqSession::validToken($_POST['token'], 'token', false) && sqTools::validEmail($_POST['email2'])) {
       $to_email = trim($_POST['email2']);
       $captcha = sqTools::captchaXX1032();
       $user = new coreUser($this->DB);

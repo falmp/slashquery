@@ -306,7 +306,7 @@ class coreACL extends sqBase {
 	 * @param $_POST
 	 */
 	public function updateRoles() {
-    if (sqSession::vaildToken($_POST['token'], 'token')) {
+    if (sqSession::validToken($_POST['token'], 'token')) {
     	$modules = $this->modules;
     	$process = function($data) use ($modules) {
     		$permissions = array();
@@ -384,7 +384,7 @@ class coreACL extends sqBase {
 	 * @return boolean
 	 */
 	public function delRole($role, $token) {
-		if (sqSession::vaildToken($token, 'token', false)) {
+		if (sqSession::validToken($token, 'token', false)) {
 			return (empty($role)) ? false : $this->DB()->PExecute('DELETE FROM sq_roles WHERE rid=? AND rid NOT IN (1,2,3)', $role);
 		} else {
 			return false;

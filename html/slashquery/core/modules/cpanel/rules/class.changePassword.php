@@ -12,7 +12,7 @@ class sqChangePassword extends sqFinalRule {
 
   protected function evaluate() {
 
-    if (sqTools::postVars('t','p') && sqSession::vaildToken($_POST['t'], 'token', false)) {
+    if (sqTools::postVars('t','p') && sqSession::validToken($_POST['t'], 'token', false)) {
       $password = sqAES::decrypt( sqSession::token(), $_POST['p'] );
 
       $uid = sqSession::Get('uid');

@@ -14,7 +14,7 @@ class sqDelUser extends sqFinalRule {
     /**
      * check for uid and token
      */
-    if (sqTools::postVars('uid','token') && sqSession::vaildToken($_POST['token'], 'token', false) ) {
+    if (sqTools::postVars('uid','token') && sqSession::validToken($_POST['token'], 'token', false) ) {
       sqSession::Start()->delSessionRef($_POST['uid']);
       sqTools::jStatus((new coreUser($this->DB))->delUser($_POST['uid']));
     } else {

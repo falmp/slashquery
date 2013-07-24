@@ -11,7 +11,7 @@ class sqUpload extends sqFinalRule {
 
   protected function evaluate() {
 
-    if (sqTools::postVars('token','name','tags') && sqSession::vaildToken($_POST['token'], 'token', false)) {
+    if (sqTools::postVars('token','name','tags') && sqSession::validToken($_POST['token'], 'token', false)) {
       sqTools::jStatus($_FILES);
     } else {
       sqTools::jStatus();

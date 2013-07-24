@@ -15,7 +15,7 @@ class sqEditUser extends sqFinalRule {
     /**
      * check for token and uid keep tooken
      */
-    if (sqTools::postVars('token','uid') && sqSession::vaildToken($_POST['token'], 'token', false)) {
+    if (sqTools::postVars('token','uid') && sqSession::validToken($_POST['token'], 'token', false)) {
       sqTools::jStatus( (new coreUser($this->DB))->edituser($_POST) );
     } else {
       sqTools::jStatus();

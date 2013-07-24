@@ -15,7 +15,7 @@ class sqChangeDetails extends sqFinalRule {
     /**
      * normal auth using email, password, token
      */
-    if (sqTools::postVars('t','name','gender') && sqSession::vaildToken($_POST['t'], 'token', false)) {
+    if (sqTools::postVars('t','name','gender') && sqSession::validToken($_POST['t'], 'token', false)) {
 
       sqTools::jStatus($this->DB()->PExecute('UPDATE sq_users set name=?, sex=? WHERE uid=?', trim($_POST['name']), $_POST['gender'], sqSession::Get('uid')));
 
