@@ -36,15 +36,10 @@ class sqDefault extends sqFinalCommand {
       $tpl['token'] = sqSession::token();
 
       /**
-       * @var int total users
-       */
-      $total = $this->DB()->GetOne('SELECT COUNT(uid) FROM sq_users');
-
-      /**
        * rows per page = 50
        * @var int total pages
        */
-      $tpl['Tpages'] = ceil($total / 50);
+      $tpl['Tpages'] = ceil($tusers / 50);
 
 			$this->notify();
     }
