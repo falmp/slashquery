@@ -19,7 +19,7 @@ class sqDispatcher extends sqSubject {
    *
    * @param sqSite $SQ
    */
-  public function Dispatch(sqSite $SQ) {
+  public function dispatch(sqSite $SQ) {
 
     $this->SQ = $SQ;
 
